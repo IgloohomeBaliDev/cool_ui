@@ -167,10 +167,10 @@ class CoolKeyboard {
       }
     });
 
-    BackButtonInterceptor.add((_,routeInfo) {
-      CoolKeyboard.sendPerformAction(TextInputAction.done);
-      return true;
-    }, zIndex: 1, name: 'CustomKeyboard');
+    // BackButtonInterceptor.add((_,routeInfo) {
+    //   CoolKeyboard.sendPerformAction(TextInputAction.done);
+    //   return true;
+    // }, zIndex: 1, name: 'CustomKeyboard');
   }
 
   static hideKeyboard({bool animation = true}) {

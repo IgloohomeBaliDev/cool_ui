@@ -205,15 +205,15 @@ HideCallback showWeuiToast(
 
   Completer<VoidCallback> result = Completer<VoidCallback>();
   var backButtonName = 'CoolUI_WeuiToast$backButtonIndex';
-  BackButtonInterceptor.add((stopDefaultButtonEvent,routeInfo){
-    print(backButtonClose);
-    if(backButtonClose){
-      result.future.then((hide){
-        hide();
-      });
-    }
-    return true;
-  }, zIndex: backButtonIndex, name: backButtonName);
+  // BackButtonInterceptor.add((stopDefaultButtonEvent,routeInfo){
+  //   print(backButtonClose);
+  //   if(backButtonClose){
+  //     result.future.then((hide){
+  //       hide();
+  //     });
+  //   }
+  //   return true;
+  // }, zIndex: backButtonIndex, name: backButtonName);
   backButtonIndex++;
 
   var overlay = OverlayEntry(
