@@ -137,7 +137,8 @@ class WeuiToastConfig extends InheritedWidget{
 
   
   static WeuiToastConfigData of(BuildContext context) {
-    var widget = context.inheritFromWidgetOfExactType(WeuiToastConfig);
+    //TODO fix this if we use this on igloohome.
+    var widget = context.dependOnInheritedWidgetOfExactType<WeuiToastConfig>();
     if(widget is WeuiToastConfig){
       return widget.data;
     }
@@ -204,7 +205,7 @@ HideCallback showWeuiToast(
 
   Completer<VoidCallback> result = Completer<VoidCallback>();
   var backButtonName = 'CoolUI_WeuiToast$backButtonIndex';
-  BackButtonInterceptor.add((stopDefaultButtonEvent){
+  BackButtonInterceptor.add((stopDefaultButtonEvent,routeInfo){
     print(backButtonClose);
     if(backButtonClose){
       result.future.then((hide){
